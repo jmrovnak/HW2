@@ -6,14 +6,18 @@
     <title>Bio- Contact Info</title>
 
     <style>
-        h1{ /*set margins for header h1 */
+        h1 { /*set margins for header h1 */
             margin-left: 30px;
             margin-right: 30px;
             background-color: rgb(250, 215, 215);
         }
 
-        .container{ /* set background for container */
+        .container { /* set background for container */
            background-color: whitesmoke;
+        }
+
+        #response {
+          text-align: center;
         }
     </style>
 
@@ -64,27 +68,59 @@
       <div class="row mb-3">
         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label">Name</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control form-control" id="colFormLabel" placeholder="">
+          <input type="email" class="form-control form-control" id="colFormLabel1" placeholder="">
         </div>
       </div>
       <div class="row mb-3">
         <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="colFormLabel" placeholder="">
+          <input type="email" class="form-control" id="colFormLabel2" placeholder="">
         </div>
       </div>
       <div class="row">
         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label">Message</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control form-control" id="colFormLabel" placeholder="">
+          <input type="email" class="form-control form-control" id="colFormLabel3" placeholder="">
         </div>
       </div>
       </div>
       <div class="col-lg-3"></div>
       </div>
         <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+          <button type="button" id="submit">Submit</button>
+          </div>
+          <div class="col-md-1"></div>
 
-        <button type="button" id="submit">Submit</button>
+            </div>
+            </div>
+          </div>
+
+        <div id="response"></div>
+
+        <script>
+
+            var submit = document.querySelector("#submit");
+            
+
+            submit.addEventListener("click", function () {
+
+              var name = document.querySelector("#colFormLabel1");
+              var email = document.querySelector("#colFormLabel2");
+              var message = document.querySelector("#colFormLabel3");
+
+              console.log(name.value);
+
+              var response = document.querySelector("#response");
+
+              response.innerHTML = "Thank you. I have received your message and will get back to you as soon as possible!"
+
+
+            })
+        </script>
       
 
 
